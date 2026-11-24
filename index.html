@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Красиво и законно – вебинар для ландшафтных дизайнеров, 26 ноября</title>
+<meta name="description" content="Как ландшафтному дизайнеру сдать проект, получить оплату и не попасть под претензию. Вебинар юриста Галины Тумановой, 26 ноября, 19:00 МСК.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+  /* План: v2\дизайн-план.md. Палитра снята с картины В. Д. Поленова «Бабушкин сад». */
+  :root{
+    --leaf:#2E3A22; --lime:#F2F0E8; --sky:#DDE3DC; --path:#C9B88F; --dress:#D9A09A; --ink:#1D2318;
+    --ink-soft:#4B5443; --rule:#B9C2B5;
+    --serif: "Literata", Georgia, serif;
+    --sans: "Golos Text", "Segoe UI", Arial, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sans);font-size:18px;line-height:1.55;color:var(--ink);background:var(--sky);-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--dress);outline-offset:3px}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+  h1,h2,h3{font-family:var(--serif);font-weight:400}
+
+  /* Кнопки: мягкое свечение цвета платья + волна-кольцо */
+  .btn{position:relative;isolation:isolate;display:inline-block;background:var(--dress);color:var(--ink);text-decoration:none;font:600 17px var(--sans);padding:16px 30px;border-radius:999px;
+    box-shadow:0 0 0 1px rgba(242,240,232,.45),0 0 24px 5px rgba(231,170,162,.75);transition:background .25s,box-shadow .25s,transform .25s}
+  .btn::after{content:"";position:absolute;inset:0;border-radius:inherit;border:2px solid rgba(217,160,154,.9);z-index:-1;opacity:0;pointer-events:none}
+  .btn:hover,.btn:focus-visible{background:#E7B6B0;box-shadow:0 0 0 1px rgba(242,240,232,.6),0 0 30px 6px rgba(231,182,176,.75);transform:translateY(-1px)}
+  @media (prefers-reduced-motion:no-preference){
+    .btn::after{animation:wave 2.6s ease-out infinite}
+    .btn:hover::after,.btn:focus-visible::after{animation-duration:1.2s}
+    @keyframes wave{0%{opacity:.85;transform:scale(1)}70%,100%{opacity:0;transform:scale(1.35,1.7)}}
+  }
+
+  /* Первый экран: картина + рамка */
+  .hero{position:relative;height:min(100vh,900px);min-height:640px;overflow:hidden;color:var(--lime)}
+  .hero > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 62%}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,26,15,.45) 0,rgba(20,26,15,0) 18%,rgba(20,26,15,0) 70%,rgba(20,26,15,.35) 100%)}
+  .bar{position:absolute;z-index:3;inset:0 0 auto 0;display:flex;justify-content:space-between;align-items:center;padding:22px 32px}
+  .bar img{height:42px;display:block;box-sizing:content-box;padding:8px 14px 8px 8px;background:rgba(29,35,24,.55);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+  .bar .btn{padding:11px 22px;font-size:15px}
+  .frame{position:absolute;z-index:2;right:7vw;top:50%;transform:translateY(-46%);width:min(430px,40vw);
+    border:1px solid rgba(242,240,232,.85);padding:34px 54px 32px 32px;
+    background:rgba(29,35,24,.38);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+  .frame h1{font-size:46px;line-height:1.02;letter-spacing:-.015em;font-weight:300}
+  .frame .sub{font-family:var(--serif);font-size:19px;line-height:1.3;margin:16px 0 26px;max-width:30ch}
+  .frame .when{font-size:15px;line-height:1.45;padding:14px 0;border-top:1px solid rgba(242,240,232,.45);border-bottom:1px solid rgba(242,240,232,.45)}
+  .frame ol{list-style:none;margin:22px 0 26px}
+  .frame li{font:500 17px/1.35 var(--sans);padding:2px 0}
+  .frame li a{text-decoration:none}
+  .frame li a:hover{color:var(--dress)}
+  .frame li{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+  .frame li i{font:400 13px var(--serif);font-style:normal;color:var(--path);margin-right:-30px;min-width:22px;text-align:center}
+  .credit{position:absolute;z-index:2;left:32px;bottom:20px;font-size:13px;color:rgba(242,240,232,.8)}
+  @media (prefers-reduced-motion:no-preference){
+    .frame{animation:appear 1.1s .25s ease-out both}
+    @keyframes appear{from{opacity:0;transform:translateY(-42%)}to{opacity:1;transform:translateY(-46%)}}
+  }
+
+  /* Пять глав */
+  .chapters{padding:110px 0 90px}
+  .intro{max-width:620px;font-family:var(--serif);font-size:26px;line-height:1.4;margin-bottom:70px}
+  .ch{display:grid;grid-template-columns:110px minmax(0,1fr) minmax(0,1fr);gap:32px;padding:34px 0;border-top:1px solid var(--rule);align-items:baseline;scroll-margin-top:20px}
+  .ch:last-child{border-bottom:1px solid var(--rule)}
+  .ch .n{font-family:var(--serif);font-size:30px;color:#8C7A4E}
+  .ch h2{font-size:clamp(28px,3.4vw,40px);line-height:1.1;letter-spacing:-.01em}
+  .ch p{color:var(--ink-soft);max-width:46ch}
+
+  /* Деталь картины + материалы */
+  .detail{position:relative;color:var(--lime);background:var(--leaf)}
+  .detail .wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;padding:0}
+  .detail figure{position:relative;min-height:520px;background:url("https://upload.wikimedia.org/wikipedia/commons/3/3b/Wassilij_Dimitriewitsch_Polenow_004.jpg") 62% 60%/cover no-repeat}
+  .detail figcaption{position:absolute;left:20px;bottom:16px;font-size:13px;color:rgba(242,240,232,.85);text-shadow:0 1px 2px rgba(0,0,0,.5)}
+  .detail .text{padding:80px 56px}
+  .detail h2{font-size:38px;line-height:1.1;margin-bottom:34px}
+  .detail ul{list-style:none}
+  .detail li{padding:16px 0;border-top:1px solid rgba(242,240,232,.25);display:flex;justify-content:space-between;gap:24px}
+  .detail li span{color:var(--path);font-size:15px;white-space:nowrap}
+
+  /* Ведущая */
+  .author{padding:110px 0}
+  .author .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px}
+  .author h2{font-size:44px;line-height:1.05}
+  .author .role{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--ink-soft);margin-top:12px}
+  .author p{margin-bottom:18px;max-width:60ch}
+  .author .note{font-size:16px;color:var(--ink-soft);border-left:2px solid var(--dress);padding-left:16px;margin-top:26px}
+
+  /* Цена */
+  .price{background:var(--lime);padding:100px 0;text-align:center}
+  .price h2{font-size:clamp(34px,4.4vw,52px);line-height:1.1;max-width:18ch;margin:0 auto 30px}
+  .price .sum{font-family:var(--serif);font-size:20px;margin-bottom:8px}
+  .price .sum b{font-weight:400;font-size:64px;display:block;line-height:1.1}
+  .price .codes{max-width:56ch;margin:8px auto 34px;color:var(--ink-soft)}
+  .price .codes b{color:var(--ink);font-weight:600}
+  .price small{display:block;margin-top:18px;color:var(--ink-soft);font-size:15px}
+
+  /* Вопросы */
+  .faq{padding:100px 0}
+  .faq .wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:64px}
+  .faq h2{font-size:40px;line-height:1.1}
+  .faq details{border-top:1px solid var(--rule);padding:20px 0}
+  .faq details:last-child{border-bottom:1px solid var(--rule)}
+  .faq summary{font-family:var(--serif);font-size:22px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";font-family:var(--sans);color:#8C7A4E}
+  .faq details[open] summary::after{content:"–"}
+  .faq details p{margin-top:10px;color:var(--ink-soft);max-width:60ch}
+
+  /* Подвал – серый */
+  footer{background:#E4E2DD;color:#4A524D;padding:52px 0;font-size:15px;border-top:1px solid #D2CEC4}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap}
+  footer img{height:38px;display:block}
+  footer nav{display:flex;gap:24px;flex-wrap:wrap}
+  footer a{text-decoration:none;border-bottom:1px solid #B9B3A4;color:var(--ink)}
+
+  @media (max-width:900px){
+    body{font-size:17px}
+    .hero{height:auto;min-height:0;display:flex;flex-direction:column}
+    .hero > img{position:relative;height:64vh;object-position:30% 70%}
+    .hero::after{bottom:auto;height:64vh}
+    .frame{position:relative;right:auto;top:auto;transform:none;width:auto;margin:-120px 18px 0;background:var(--leaf);backdrop-filter:none;animation:none}
+    .credit{position:static;padding:14px 18px 22px;background:var(--leaf)}
+    .hero{background:var(--leaf)}
+    .ch{grid-template-columns:56px minmax(0,1fr);gap:8px 18px}
+    .ch p{grid-column:2}
+    .detail .wrap,.author .wrap,.faq .wrap{grid-template-columns:1fr;gap:32px}
+    .detail figure{min-height:300px}
+    .detail .text{padding:56px 24px}
+  }
+  @media (max-width:520px){
+    .wrap{padding:0 20px}
+    .bar{padding:16px 18px}
+    .bar img{height:34px}
+    .frame{padding:28px 44px 26px 22px}
+    .frame h1{font-size:38px}
+    .intro{font-size:22px}
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Wassilij_Dimitriewitsch_Polenow_001.jpg" alt="Картина В. Д. Поленова «Бабушкин сад»: пожилая женщина и девушка идут по тропинке заросшего сада к дому с колоннами">
+  <div class="bar">
+    <img src="img/logo.svg" alt="Туманова: красиво и законно">
+    <a class="btn" href="#price">Записаться</a>
+  </div>
+  <div class="frame">
+    <h1>Красиво и законно</h1>
+    <p class="sub">Как ландшафтному дизайнеру сдать проект, получить оплату и не попасть под претензию</p>
+    <p class="when">Вебинар Галины Тумановой<br>26 ноября, четверг, 19:00 МСК<br>Полтора часа и ответы на вопросы</p>
+    <ol>
+      <li><a href="#ch1">Договор и ТЗ</a><i>I</i></li>
+      <li><a href="#ch2">Акт и приемка этапов</a><i>II</i></li>
+      <li><a href="#ch3">Правки</a><i>III</i></li>
+      <li><a href="#ch4">Сроки и неустойка</a><i>IV</i></li>
+      <li><a href="#ch5">Авторские права на сад</a><i>V</i></li>
+    </ol>
+    <a class="btn" href="#price">Записаться на вебинар</a>
+  </div>
+  <p class="credit">В. Д. Поленов. Бабушкин сад. 1878</p>
+</section>
+
+<section class="chapters">
+  <div class="wrap">
+    <p class="intro">Сад сдают заказчику так же, как дом: по документам. Пять тем – в том порядке, в котором они встают в каждом проекте.</p>
+    <article class="ch" id="ch1"><span class="n">I</span><h2>Договор и ТЗ</h2><p>Какие условия на самом деле защищают дизайнера и что записать в ТЗ с первого дня.</p></article>
+    <article class="ch" id="ch2"><span class="n">II</span><h2>Акт и приемка этапов</h2><p>Как сдавать работу по этапам, чтобы оплата не зависала, а молчание заказчика работало на вас.</p></article>
+    <article class="ch" id="ch3"><span class="n">III</span><h2>Правки</h2><p>Где заканчивается проект и начинается новая работа – и как оформить ее за отдельные деньги.</p></article>
+    <article class="ch" id="ch4"><span class="n">IV</span><h2>Сроки и неустойка</h2><p>Чем рискует исполнитель при просрочке и как сроки зависят от самого заказчика.</p></article>
+    <article class="ch" id="ch5"><span class="n">V</span><h2>Авторские права на сад</h2><p>Кому принадлежит проект, можно ли показывать его в портфолио и что делать, если его повторили без вас.</p></article>
+  </div>
+</section>
+
+<section class="detail">
+  <div class="wrap">
+    <figure role="img" aria-label="Картина В. Д. Поленова «Заросший пруд»: деревянные мостки у пруда в тенистом саду"><figcaption>В. Д. Поленов. Заросший пруд. 1879</figcaption></figure>
+    <div class="text">
+      <h2>После эфира у вас останутся документы</h2>
+      <ul>
+        <li>Договор на ландшафтный проект <span>шаблон</span></li>
+        <li>ТЗ, акт и допсоглашение <span>шаблоны</span></li>
+        <li>Сдача проекта без претензий <span>чек-лист</span></li>
+        <li>Запись вебинара <span>30 дней</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="author">
+  <div class="wrap">
+    <div>
+      <h2>Галина Туманова</h2>
+      <p class="role">юрист и врач</p>
+    </div>
+    <div>
+      <p>Много лет веду судебные дела по защите прав потребителей – и на стороне заказчиков, и на стороне исполнителей. Поэтому знаю, какие аргументы срабатывают в суде, а какие нет.</p>
+      <p>Прошла курс ландшафтного дизайна и понимаю вашу работу изнутри. Веду канал «Красиво и законно» – о праве для дизайнеров простым языком.</p>
+      <p class="note">Спикер Ландшафтной конференции 2026 «Путь ландшафта, как путь самурая».</p>
+    </div>
+  </div>
+</section>
+
+<section class="price" id="price">
+  <div class="wrap">
+    <h2>Одна претензия стоит дороже вебинара</h2>
+    <p class="sum"><b>1 490 ₽</b></p>
+    <p class="codes">Подписчикам канала «Красиво и законно» и участникам конференции «Путь ландшафта, как путь самурая» – <b>990 ₽</b> по кодовому слову. Слово – в закрепленном посте канала и у организаторов конференции. Укажите его в форме регистрации.</p>
+    <a class="btn" href="#">Зарегистрироваться</a>
+    <small>После регистрации пришлю реквизиты для оплаты по СБП и чек из «Мой налог»</small>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <h2>Вопросы</h2>
+    <div>
+      <details><summary>Как проходит вебинар?</summary><p>Онлайн в VK Звонках. Ссылку пришлю на почту после оплаты. Подключиться можно с телефона или компьютера.</p></details>
+      <details><summary>Не смогу в 19:00 – будет запись?</summary><p>Да, запись и все шаблоны доступны 30 дней после эфира.</p></details>
+      <details><summary>Как оплатить?</summary><p>После регистрации вы получите реквизиты для перевода по СБП. Я самозанятая – чек из «Мой налог» придет на почту.</p></details>
+      <details><summary>Можно спросить про свой случай?</summary><p>Да, после основной части – ответы на вопросы участников. Вопрос можно прислать заранее в форме регистрации.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo-light.svg" alt="Туманова: красиво и законно">
+    <nav>
+      <a href="#">Политика обработки персональных данных</a>
+      <a href="#">Оферта</a>
+      <a href="#">Канал «Красиво и законно»</a>
+    </nav>
+    <div>Туманова Галина, самозанятая, 2026</div>
+  </div>
+</footer>
+
+</body>
+</html>
